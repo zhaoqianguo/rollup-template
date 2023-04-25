@@ -1,0 +1,31 @@
+{
+  "name": "rollup-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/react": "^18.0.38",
+    "rollup": "^3.21.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "jsx": "react", // 在 .tsx 文件里支持JSX
+    "declaration": true, // 是否自动创建类型声明文件
+    "outDir": "dist", // 输出目录
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
