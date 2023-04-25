@@ -39,6 +39,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -47,14 +48,11 @@
       "path": "node_modules/cz-customizable"
     }
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint --fix"
+    "src/**/*.{jsx,txs,ts,js,json,css,md}": [
+      "prettier --write", 
+      "eslint --fix", 
+      "git add" 
     ]
   }
 }

@@ -1,3 +1,3 @@
-import func from './loadFunc';
+import func from './loadFunc'
 
-console.log(func(1, 2));
+console.log(func(1, 2))
