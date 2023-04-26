@@ -4,6 +4,13 @@ import babel from '@rollup/plugin-babel'
 import typescript from '@rollup/plugin-typescript' // 解析ts
 import terser from '@rollup/plugin-terser' // 压缩打包代码
 import del from 'rollup-plugin-delete' // Delete files and folders
+import alias from '@rollup/plugin-alias'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import postcss from 'rollup-plugin-postcss'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export default {
   input: 'src/main.ts',
@@ -27,14 +34,21 @@ export default {
   ],
   plugins: [
     typescript(), // 会自动读取文件tsconfig.json配置
-    commonjs(),
+    commonjs({}),
     resolve(),
     // terser(),
     babel({
       babelHelpers: 'runtime',
       exclude: 'node_modules/**'
     }),
-    del({ targets: 'dist/*' })
+    del({ targets: 'dist/*' }),
+    alias({
+      entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
+    }),
+    postcss({
+      extract: true, // css 通过链接引入
+      use: ['less'] // 编译 less 可选 sass less stylus
+    })
   ],
   external: ['react', 'react-dom']
 }

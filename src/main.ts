@@ -1,3 +1,6 @@
-import func from './loadFunc'
+import loadFunc from '@/loadFunc'
+import loadLess from './loadLess/loadLess'
 
-console.log(func(1, 2))
+loadLess()
+
+console.log(loadFunc(1, 2))

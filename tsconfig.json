@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es6",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "importHelpers": true,
@@ -9,8 +9,14 @@
     "declaration": true, // 是否自动创建类型声明文件
     "outDir": "dist", // 输出目录
     "strict": true,
-    "esModuleInterop": true
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node", "./typings.d.ts"]
   },
-  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
